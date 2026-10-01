@@ -1,0 +1,99 @@
+@use "../mixins" as breakPoint;
+@use "../utils" as color;
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: GeorgiaCustomRegular;
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/georgia/Georgia-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: GeorgiaCustomBold;
+  font-style: normal;
+  font-weight: 700;
+  src: url("/fonts/georgia/Georgia-Bold.ttf") format("truetype");
+}
+
+body {
+  background-color: color.$main;
+  box-sizing: border-box;
+  color: color.$white;
+  scroll-behavior: none;
+}
+
+html {
+  font-size: 62.5%;
+
+  @include breakPoint.respond(tab-port) {
+    font-size: 45%;
+  }
+
+  @media only screen and (width <= 850px) {
+    font-size: 52%;
+  }
+
+  @include breakPoint.respond(tab-land) {
+    font-size: 57%;
+  }
+}
+
+.table-wraper {
+  border: 1px solid color.$primarybg--light;
+  border-radius: 1.2rem;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+
+  & > thead {
+    border-bottom: 1px solid color.$primarybg--light;
+
+    & > tr {
+      & > th {
+        border-bottom: 1px solid color.$primarybg--light;
+        color: color.$white--light;
+        font-size: 1.2rem;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        padding: 1.6rem;
+        text-align: left;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  & > tbody {
+    & > tr {
+      & > td {
+        color: color.$white;
+        font-size: 1.4rem;
+        padding: 1.2rem 1.6rem;
+        vertical-align: middle;
+      }
+    }
+
+    & > * {
+      &:last-child {
+        border-bottom-left-radius: 1.7rem;
+        border-bottom-right-radius: 1.7rem;
+      }
+
+      &:nth-child(odd) {
+        background-color: color.$main;
+      }
+    }
+  }
+}

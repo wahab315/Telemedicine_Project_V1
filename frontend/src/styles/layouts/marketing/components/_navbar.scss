@@ -1,0 +1,199 @@
+@use "../../../mixins" as mixins;
+@use "../../../utils" as color;
+
+.navbar {
+  @include mixins.flex-center(row);
+
+  justify-content: space-between;
+  padding: 1.7rem 0;
+
+  &__brand {
+    display: inline-flex;
+
+    &--logo {
+      @include mixins.respond(tab-port) {
+        height: 4.6rem;
+        width: 18.4rem;
+      }
+    }
+  }
+
+  &__links {
+    @include mixins.flex-center(row, 4rem);
+
+    @include mixins.respond(tab-port) {
+      gap: 2.5rem;
+    }
+
+    @media only screen and (width <= 58.125em) {
+      display: none;
+    }
+
+    &--dropdown {
+      position: relative;
+      z-index: 100;
+    }
+
+    &--dropdown-mobile {
+      @media only screen and (width <= 58.125em) {
+        width: 100%;
+      }
+    }
+
+    &--btn {
+      font-size: 1.6rem;
+      font-weight: 400;
+    }
+  }
+
+  &__actions {
+    &--btn {
+      @media only screen and (width <= 58.125em) {
+        display: none;
+      }
+    }
+  }
+
+  &__menu {
+    &--toggle {
+      display: none;
+
+      @media only screen and (width <= 58.125em) {
+        @include mixins.flex-center;
+
+        color: color.$white;
+        cursor: pointer;
+        display: flex;
+        font-size: 4.2rem;
+      }
+    }
+
+    &--mobile {
+      display: none;
+
+      @media only screen and (width <= 58.125em) {
+        background-color: color.$main--light;
+        display: flex;
+        gap: 4rem;
+        height: calc(100vh - 7.2rem);
+        justify-content: center;
+        margin-top: 0.5rem;
+        padding-top: 8rem;
+        position: absolute;
+        width: 100%;
+        z-index: 1000000;
+      }
+    }
+
+    &--list {
+      @media only screen and (width <= 58.125em) {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+        justify-content: center;
+        margin: auto;
+        position: absolute;
+        width: 30rem;
+      }
+    }
+
+    &--link {
+      font-size: 1.6rem;
+      font-weight: 400;
+    }
+
+    &--cta {
+      text-align: center;
+    }
+  }
+}
+
+.navbar-dropdown {
+  &__trigger {
+    @include mixins.flex-center(row, 0.4rem);
+
+    cursor: pointer;
+    padding: 1rem 0;
+
+    @media only screen and (width <= 58.125em) {
+      padding: 0;
+    }
+
+    &--title {
+      font-size: 1.6rem;
+      font-weight: 400;
+    }
+
+    &--icon {
+      @include mixins.flex-center;
+
+      transition: transform 0.2s ease;
+
+      & > * {
+        color: color.$white;
+        font-size: 1.6rem;
+      }
+    }
+
+    &--icon-open {
+      transform: rotate(-180deg);
+    }
+  }
+
+  &__panel {
+    border-radius: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 2rem;
+    position: absolute;
+    top: 4rem;
+    width: 27rem;
+
+    @media only screen and (width <= 58.125em) {
+      border: 1px solid rgb(255 255 255 / 26%);
+      padding: 2rem;
+      position: relative;
+      text-align: start;
+      top: 1rem;
+      width: 100%;
+    }
+
+    &--link {
+      border-radius: 0.8rem;
+      font-size: 1.4rem;
+      font-weight: 400;
+      padding: 1.2rem 1rem;
+      text-decoration: none;
+
+      &:hover {
+        background-color: #282828;
+      }
+
+      @media only screen and (width <= 58.125em) {
+        .navbar-dropdown__panel--heading {
+          font-size: 1.6rem;
+        }
+
+        .navbar-dropdown__panel--meta {
+          display: none;
+        }
+      }
+
+      @media only screen and (width <= 46.875em) {
+        padding: 0.7rem 0.4rem;
+      }
+    }
+
+    &--heading {
+      font-size: 1.6rem;
+      font-weight: 500;
+    }
+
+    &--meta {
+      &:nth-child(2) {
+        padding: 0.4rem 0;
+      }
+    }
+  }
+}

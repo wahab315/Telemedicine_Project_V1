@@ -1,0 +1,76 @@
+@use "sass:map";
+@use "../utils/space-variables" as tokens;
+@use "./breakPoint" as bp;
+
+@mixin primary-section-padding {
+  padding: map.get(tokens.$space-scale, 11) 0;
+
+  @media only screen and (width <= 62.5em) {
+    padding: 6.5rem 0;
+  }
+
+  @media only screen and (width <= 50em) {
+    padding: 5rem 0;
+  }
+
+  @include bp.respond(mobile) {
+    padding: map.get(tokens.$space-scale, 8) 0;
+  }
+}
+
+@mixin primary-section-padding-bottom {
+  padding-bottom: map.get(tokens.$space-scale, 11);
+
+  @media only screen and (width <= 62.5em) {
+    padding-bottom: 6.5rem;
+  }
+
+  @media only screen and (width <= 50em) {
+    padding-bottom: 5rem;
+  }
+
+  @include bp.respond(mobile) {
+    padding-bottom: map.get(tokens.$space-scale, 8);
+  }
+}
+
+@mixin section-spacing {
+  @include primary-section-padding;
+}
+
+@mixin container-inline-padding {
+  padding-inline: map.get(tokens.$container-inline-padding, desktop);
+
+  @media only screen and (width <= 89.375em) {
+    padding-inline: map.get(tokens.$container-inline-padding, laptop);
+  }
+
+  @media only screen and (width <= 62.5em) {
+    padding-inline: map.get(tokens.$container-inline-padding, tablet);
+  }
+
+  @media only screen and (width <= 31.25em) {
+    padding-inline: map.get(tokens.$container-inline-padding, mobile);
+  }
+}
+
+@mixin flex-center($direction: row, $gap: null) {
+  align-items: center;
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+
+  @if $gap {
+    gap: $gap;
+  }
+}
+
+@mixin stack-on($breakpoint, $gap: null) {
+  @include bp.respond($breakpoint) {
+    flex-direction: column;
+
+    @if $gap {
+      gap: $gap;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+@use "../../utils" as color;
+
+.input {
+  height: 10rem;
+
+  & > label {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 0.8rem;
+  }
+
+  & > input {
+    background-color: color.$main--light;
+    border: 1px solid rgb(127 127 127 / 46.67%);
+    border-radius: 0.7rem;
+    color: color.$white;
+    font-size: 1.4rem;
+    padding: 1.6rem 1rem;
+    width: 100%;
+
+    &:focus {
+      border: none;
+      outline: 1px solid color.$primary;
+    }
+
+    &.input__invalid {
+      border: 1px solid color.$red;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  & > p {
+    font-weight: 400;
+    height: 1.5em;
+    margin-bottom: 2rem;
+    margin-left: 1rem;
+    margin-top: 0.2rem;
+  }
+}

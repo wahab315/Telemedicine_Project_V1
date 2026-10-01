@@ -1,0 +1,50 @@
+@use "../mixins/helpers" as helpers;
+@use "../mixins/layout" as layout;
+
+a {
+  text-decoration: none;
+}
+
+.section__spacing--primary {
+  @include layout.section-spacing;
+}
+
+.section__padding--primary {
+  @include layout.primary-section-padding;
+}
+
+.section__padding--primary-bottom {
+  @include layout.primary-section-padding-bottom;
+}
+
+.flex__center {
+  @include helpers.flex-center-column;
+}
+
+.text__align {
+  &--center {
+    @include helpers.text-align-center;
+  }
+
+  &--start {
+    @include helpers.text-align-start;
+  }
+
+  &--end {
+    @include helpers.text-align-end;
+  }
+}
+
+.text__case--uppercase {
+  @include helpers.text-uppercase;
+}
+
+.font__georgia {
+  &--regular {
+    @include helpers.font-georgia-regular;
+  }
+
+  &--bold {
+    @include helpers.font-georgia-bold;
+  }
+}

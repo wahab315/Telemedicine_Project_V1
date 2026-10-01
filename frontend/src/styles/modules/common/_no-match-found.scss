@@ -1,0 +1,14 @@
+.no-match-found {
+  margin: auto;
+  padding: 15rem 0;
+  width: 250px;
+
+  &__icon {
+    font-size: 15rem;
+  }
+
+  & > h2 {
+    margin-bottom: 0.6rem;
+    margin-top: 1.2rem;
+  }
+}

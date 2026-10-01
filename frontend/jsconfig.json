@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@core/*": ["./src/@core/*"],
+      "@/*": ["./src/*"],
+      "@/marketing/*": ["./src/module/marketing/*"],
+      "@/patient/*": ["./src/module/patient/*"],
+      "@/doctor/*": ["./src/module/doctor/*"],
+      "@/pharmacy/*": ["./src/module/pharmacy/*"],
+      "@/laboratory/*": ["./src/module/laboratory/*"],
+      "@/shared/*": ["./src/shared/*"],
+      "@/components/*": ["./src/shared/components/*"],
+      "@/ui/*": ["./src/shared/components/ui/*"],
+      "@/common/*": ["./src/shared/components/common/*"],
+      "@/features/*": ["./src/shared/components/features/*"],
+      "@/layouts/*": ["./src/shared/layouts/*"],
+      "@/styles/*": ["./src/styles/*"],
+      "@/public/*": ["./public/*"]
+    }
+  },
+  "exclude": ["node_modules", ".next"]
+}

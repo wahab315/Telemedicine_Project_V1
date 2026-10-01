@@ -1,0 +1,23 @@
+@use "../../utils" as color;
+
+.btn__goto-top {
+  align-items: center;
+  background-color: color.$primary;
+  border: 1px solid color.$main;
+  border-radius: 50%;
+  bottom: 5%;
+  cursor: pointer;
+  display: flex;
+  height: 3.7rem;
+  justify-content: center;
+  position: fixed;
+  right: 5%;
+  transition: 0.3s ease-in-out;
+  width: 3.7rem;
+
+  > * {
+    color: color.$main;
+    font-size: 1.8rem;
+    transition: 0.3s ease-in-out;
+  }
+}

@@ -1,0 +1,9 @@
+@use "../../mixins" as mixins;
+
+.container {
+  @include mixins.container-inline-padding;
+
+  margin-inline: auto;
+  max-width: 1440px;
+  width: 100%;
+}

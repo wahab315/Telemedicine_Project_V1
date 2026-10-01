@@ -1,0 +1,37 @@
+.offline-screen {
+  align-items: center;
+  background-color: var(--main);
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0 2rem;
+  position: fixed;
+  width: 100%;
+  z-index: 500;
+
+  & > div {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__content {
+    max-width: 40rem;
+    text-align: center;
+
+    & > h2 {
+      margin-top: -1rem;
+    }
+
+    & > p {
+      margin-bottom: 3rem;
+      margin-top: 0.6rem;
+    }
+
+    & > button {
+      width: 22rem;
+    }
+  }
+}

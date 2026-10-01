@@ -1,0 +1,38 @@
+@use "sass:list";
+@use "../utils/color-variables" as color;
+
+@mixin avatar-variant-colors {
+  $variants: (
+    "0": (
+      color.$primarybg--light,
+      color.$primary
+    ),
+    "1": (
+      color.$purplebg--light,
+      color.$purple--light
+    ),
+    "2": (
+      color.$bluebg--light,
+      color.$blue--light
+    ),
+    "3": (
+      color.$yellow--light,
+      color.$black
+    ),
+    "4": (
+      color.$main--light,
+      color.$white
+    ),
+    "5": (
+      color.$primarybg--light,
+      color.$yellow
+    )
+  );
+
+  @each $key, $pair in $variants {
+    &[data-variant="#{$key}"] {
+      background-color: list.nth($pair, 1);
+      color: list.nth($pair, 2);
+    }
+  }
+}

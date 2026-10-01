@@ -1,0 +1,167 @@
+@use "../mixins" as mixins;
+
+.text {
+  &__large {
+    font-size: 2rem;
+
+    @include mixins.respond(phone) {
+      font-size: 1.8rem;
+    }
+  }
+
+  &__large--bold {
+    font-size: 2rem;
+    font-weight: 600;
+
+    @include mixins.respond(phone) {
+      font-size: 1.8rem;
+    }
+  }
+
+  &__main {
+    font-size: 1.8rem;
+    line-height: 160%;
+
+    @include mixins.respond(phone) {
+      font-size: 1.65rem;
+    }
+  }
+
+  &__main--bold {
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 160%;
+
+    @include mixins.respond(phone) {
+      font-size: 1.65rem;
+    }
+  }
+
+  &__primary {
+    font-size: 1.6rem;
+    font-weight: 400;
+
+    @include mixins.respond(phone) {
+      font-size: 1.44rem;
+    }
+  }
+
+  &__primary--bold {
+    font-size: 1.6rem;
+    font-weight: 600;
+
+    @include mixins.respond(phone) {
+      font-size: 1.44rem;
+    }
+  }
+
+  &__secondry {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 150%;
+  }
+
+  &__secondary--bold {
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 150%;
+  }
+
+  &__tertiary {
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+
+  &__tertiary--bold {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+}
+
+.heading {
+  &__main {
+    font-size: clamp(3.6rem, calc(5vw + 0.6rem), 7.2rem);
+    font-weight: 400;
+  }
+
+  &__primary {
+    font-size: clamp(2.8rem, calc(3.9vw + 0.6rem), 5.6rem);
+    font-weight: 400;
+  }
+
+  &__primary--bold {
+    font-size: clamp(2.8rem, calc(3.9vw + 0.6rem), 5.6rem);
+    font-weight: 600;
+  }
+
+  &__secondry {
+    font-size: clamp(2.2rem, calc(2.8vw + 0.6rem), 4rem);
+    font-weight: 400;
+  }
+
+  &__secondary--bold {
+    font-size: clamp(2.2rem, calc(2.8vw + 0.6rem), 4rem);
+    font-weight: 600;
+  }
+
+  &__tertiary {
+    font-size: 2.4rem;
+    font-weight: 400;
+
+    @include mixins.respond(phone) {
+      font-size: 2.2rem;
+    }
+  }
+
+  &__tertiary--bold {
+    font-size: 2.4rem;
+    font-weight: 600;
+
+    @include mixins.respond(phone) {
+      font-size: 2.2rem;
+    }
+  }
+
+  &__medium {
+    font-size: 3.2rem;
+    font-weight: 400;
+
+    @include mixins.respond(phone) {
+      font-size: 2.6rem;
+    }
+  }
+
+  &__small {
+    font-size: 2.2rem;
+    font-weight: 600;
+
+    @include mixins.respond(phone) {
+      font-size: 2rem;
+    }
+  }
+
+  &__small-light {
+    font-size: 1.8rem;
+    font-weight: 400;
+  }
+
+  &__small-light--bold {
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+
+  &__xs {
+    font-size: 1.6rem;
+    font-weight: 400;
+  }
+
+  &__xs--bold {
+    font-size: 1.6rem;
+    font-weight: 600;
+  }
+
+  &__xs--extra-bold {
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+}

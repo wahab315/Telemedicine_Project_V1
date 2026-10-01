@@ -1,0 +1,11 @@
+@use "./color-variables" as colors;
+
+@each $name, $value in colors.$color-map {
+  .bg__#{$name} {
+    background-color: $value;
+  }
+
+  .color__#{$name} {
+    color: $value;
+  }
+}

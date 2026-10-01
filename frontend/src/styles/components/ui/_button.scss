@@ -1,0 +1,254 @@
+@use "../../mixins" as mixins;
+@use "../../utils" as color;
+
+a {
+  text-decoration: none;
+}
+
+@mixin btn-base($font-size, $font-weight) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+}
+
+@mixin btn-primary-base(
+  $border-color: color.$primary,
+  $text-color: color.$primary,
+  $hover-bg: color.$primary,
+  $hover-color: color.$black
+) {
+  @include btn-base(1.6rem, 600);
+
+  background-color: transparent;
+  border: 1px solid $border-color;
+  border-radius: 1rem;
+  color: $text-color;
+  padding: 1.7rem 2.4rem;
+  text-align: center;
+
+  @media only screen and (width <= 79.375em) {
+    padding: 1.55rem 2rem;
+  }
+
+  &:hover:not(:disabled) {
+    background-color: $hover-bg;
+    color: $hover-color;
+  }
+
+  &:disabled {
+    border-color: rgb(127 127 127 / 46.67%);
+    color: color.$white--light;
+    cursor: not-allowed;
+    opacity: 0.55;
+  }
+}
+
+@mixin btn-trigger-base($bg-color, $text-color) {
+  align-items: center;
+  background-color: $bg-color;
+  border: none;
+  border-radius: 0.6rem;
+  color: $text-color;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.3rem 1.4rem;
+  text-align: start;
+  width: 100%;
+}
+
+@mixin btn-tertiary-base(
+  $bg-color,
+  $border-color,
+  $hover-bg,
+  $text-color: color.$white
+) {
+  @include btn-base(1.3rem, 400);
+
+  align-items: center;
+  background-color: $bg-color;
+  border: 1px solid $border-color;
+  border-radius: 0.4rem;
+  color: $text-color;
+  display: flex;
+  gap: 0.2rem;
+  justify-content: center;
+  padding: 0.6rem 0;
+  width: 80px;
+
+  &:not(:disabled):hover {
+    background-color: $hover-bg;
+  }
+
+  & > *:first-child {
+    font-size: 1.6rem;
+    margin-top: -0.3rem;
+  }
+}
+
+[class^="btn__"],
+[class*=" btn__"] {
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.btn__link {
+  @include btn-base(1.2rem, 400);
+
+  background: none;
+  border: none;
+  display: inline;
+  padding: 0;
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
+
+.btn__primary {
+  @include btn-primary-base;
+}
+
+.btn__secondry {
+  @include btn-primary-base(
+    $border-color: color.$primarybg--light,
+    $text-color: color.$white--light,
+    $hover-bg: color.$primarybg--light,
+    $hover-color: color.$white
+  );
+}
+
+.btn__primary--full {
+  @include btn-primary-base;
+
+  display: block;
+  width: 100%;
+}
+
+.btn__primary--arrow {
+  @include btn-primary-base;
+
+  align-items: center;
+  display: inline-flex;
+  gap: 0.6rem;
+
+  & > * {
+    &:first-child {
+      font-size: 1.6rem;
+    }
+  }
+}
+
+.btn__trigger {
+  @include btn-trigger-base(color.$main--light, color.$white--light);
+
+  &:hover {
+    background-color: color.$primarybg--light;
+  }
+}
+
+.btn__trigger--active {
+  @include btn-trigger-base(color.$primary, color.$black);
+}
+
+.btn__tertiary--danger {
+  @include btn-tertiary-base(color.$red, color.$red, color.$red--light);
+}
+
+.btn__tertiary--amber {
+  @include btn-tertiary-base(color.$amber, color.$amber, color.$amber--light);
+}
+
+.btn__tertiary--green {
+  @include btn-tertiary-base(color.$green, color.$green, color.$green--light);
+}
+
+.btn__tertiary--gray {
+  @include btn-tertiary-base(color.$gray, color.$gray, color.$gray-light);
+}
+
+.btn__tertiary--blue-edit {
+  @include btn-tertiary-base(
+    color.$blue-edit,
+    color.$blue-edit,
+    color.$blue-edit-light
+  );
+}
+
+.btn__tertiary--emerald-green {
+  @include btn-tertiary-base(
+    color.$emerald-green,
+    color.$emerald-green,
+    color.$emerald-green-light
+  );
+}
+
+.btn__tertiary--danger,
+.btn__tertiary--amber,
+.btn__tertiary--green,
+.btn__tertiary--emerald-green,
+.btn__tertiary--blue-edit {
+  &:disabled {
+    background-color: color.$gray-light;
+    border-color: color.$gray-light;
+    color: color.$white;
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+}
+
+%btn__simple {
+  @include btn-base(1.6rem, 400);
+
+  &:hover {
+    color: color.$white;
+  }
+}
+
+.btn__simple {
+  @extend %btn__simple;
+}
+
+.btn__navlink {
+  @include btn-base(1.6rem, 400);
+}
+
+.btn__navbar--brand {
+  display: inline-flex;
+}
+
+.btn__navlink--navbar {
+  color: color.$white;
+
+  @include btn-base(1.6rem, 400);
+}
+
+.btn__navbar-menu--toggle {
+  display: none;
+
+  @media only screen and (width <= 58.125em) {
+    @include mixins.flex-center;
+
+    color: color.$white;
+    cursor: pointer;
+    display: flex;
+    font-size: 4.2rem;
+  }
+}
+
+.btn__simple--footer-link {
+  @extend %btn__simple;
+
+  color: color.$gray;
+  display: block;
+
+  @media only screen and (width <= 50em) {
+    display: inline-block;
+    padding: 0 1rem;
+  }
+}

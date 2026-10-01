@@ -1,0 +1,16 @@
+.business-layout {
+  display: contents;
+}
+
+[data-scroll-reveal="pending"] {
+  opacity: 0;
+  visibility: hidden;
+}
+
+[data-scroll-reveal="pending"].scroll-reveal--fade-up {
+  transform: translate3d(0, 100px, 0);
+}
+
+[data-scroll-reveal="pending"].scroll-reveal--fade-down {
+  transform: translate3d(0, -100px, 0);
+}

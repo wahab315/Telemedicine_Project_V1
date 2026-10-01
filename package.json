@@ -1,0 +1,23 @@
+{
+  "name": "telemedicine",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "npm run dev:frontend",
+    "dev:frontend": "npm run dev -w telemedicine-frontend",
+    "dev:backend": "echo \"Backend package is not created yet. Follow Phase 2 in MONOREPO_PLAN.md.\" && exit 1",
+    "build": "npm run build:frontend",
+    "build:frontend": "npm run build -w telemedicine-frontend",
+    "build:backend": "echo \"Backend package is not created yet. Follow Phase 2 in MONOREPO_PLAN.md.\" && exit 1",
+    "start": "npm run start:frontend",
+    "start:frontend": "npm run start -w telemedicine-frontend",
+    "start:backend": "echo \"Backend package is not created yet. Follow Phase 2 in MONOREPO_PLAN.md.\" && exit 1",
+    "lint": "npm run lint -w telemedicine-frontend",
+    "lint:fix": "npm run lint:fix -w telemedicine-frontend",
+    "format": "npm run format -w telemedicine-frontend",
+    "format:check": "npm run format:check -w telemedicine-frontend"
+  }
+}

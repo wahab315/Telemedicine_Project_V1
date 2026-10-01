@@ -1,0 +1,3 @@
+Inter is licensed under the SIL Open Font License, Version 1.1.
+Source: https://github.com/rsms/inter
+This file is the latin variable (wght) cut from @fontsource-variable/inter.

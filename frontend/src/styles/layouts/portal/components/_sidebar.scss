@@ -1,0 +1,298 @@
+@use "../../../mixins" as mixins;
+@use "../../../utils" as color;
+
+.sidebar {
+  border-right: 1px solid color.$main--light;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  height: 100vh;
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+
+  &__mobile-mount {
+    flex: 0 0 0;
+    min-width: 0;
+    overflow: visible;
+    position: relative;
+    width: 0;
+  }
+
+  &__backdrop {
+    background-color: rgb(0 0 0 / 55%);
+    inset: 0;
+    position: fixed;
+    z-index: 350;
+  }
+
+  &--drawer {
+    border-right: 1px solid color.$main--light;
+    box-shadow: 0.4rem 0 2.4rem rgb(0 0 0 / 25%);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    left: 0;
+    max-width: 85vw;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    transform: translateX(-100%);
+    transition: transform 0.28s ease;
+    width: 27.7rem;
+    z-index: 400;
+  }
+
+  &--drawer-open {
+    transform: translateX(0);
+  }
+
+  &--collapsed {
+    .sidebar__link {
+      gap: 0;
+      justify-content: center;
+      padding: 0.85rem 0.5rem;
+    }
+
+    .sidebar__nav {
+      padding-inline: 0.6rem;
+    }
+  }
+
+  &__brand {
+    align-items: center;
+    border-bottom: 1px solid color.$main--light;
+    display: flex;
+    flex-shrink: 0;
+    gap: 0.8rem;
+    justify-content: space-between;
+    padding: 1.6rem 1.6rem 1.2rem;
+
+    &--mobile {
+      gap: 1.2rem;
+    }
+
+    &-link {
+      display: inline-flex;
+      flex: 1;
+      min-width: 0;
+      outline: none;
+
+      &--collapsed {
+        flex: 0;
+        justify-content: center;
+      }
+
+      &:focus-visible {
+        border-radius: 0.4rem;
+        box-shadow: 0 0 0 2px color.$primary;
+      }
+    }
+
+    &-logo {
+      height: auto;
+      max-width: 100%;
+      width: 18rem;
+    }
+
+    &-favicon {
+      display: block;
+      height: auto;
+      width: 3.2rem;
+    }
+  }
+
+  &__collapse-btn {
+    @include mixins.flex-center(row);
+
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 0.6rem;
+    color: color.$white--light;
+    cursor: pointer;
+    flex-shrink: 0;
+    font: inherit;
+    outline: none;
+    padding: 0.6rem;
+
+    &:hover {
+      background-color: color.$main--light;
+      color: color.$white;
+    }
+
+    &:focus-visible {
+      border-color: color.$primary;
+      box-shadow: 0 0 0 1px color.$primary;
+    }
+  }
+
+  &__collapse-icon {
+    font-size: 2rem;
+    transition: transform 0.25s ease;
+
+    &--collapsed {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__close-btn {
+    @include mixins.flex-center(row);
+
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 0.6rem;
+    color: color.$white--light;
+    cursor: pointer;
+    flex-shrink: 0;
+    font: inherit;
+    outline: none;
+    padding: 0.6rem;
+
+    &:hover {
+      background-color: color.$main--light;
+      color: color.$white;
+    }
+
+    &:focus-visible {
+      border-color: color.$primary;
+      box-shadow: 0 0 0 1px color.$primary;
+    }
+  }
+
+  &__close-icon {
+    font-size: 2.4rem;
+  }
+
+  &__nav {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 2rem;
+    overflow-y: auto;
+    padding: 1.6rem 1.2rem 2.4rem;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      display: none;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: color.$primary;
+      border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: color.$primary--light;
+    }
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  &__section-title {
+    color: color.$white--light;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    margin: 0;
+    padding: 0 0.8rem;
+    text-transform: uppercase;
+    transition:
+      height 0.2s ease,
+      margin 0.2s ease,
+      opacity 0.2s ease,
+      padding 0.2s ease;
+
+    &--hidden {
+      height: 0;
+      margin: 0;
+      opacity: 0;
+      overflow: hidden;
+      padding: 0;
+      pointer-events: none;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    margin: 0;
+  }
+
+  &__link {
+    align-items: center;
+    border-radius: 0.6rem;
+    color: color.$white;
+    display: flex;
+    flex-direction: row;
+    font-size: 1.4rem;
+    gap: 1rem;
+    justify-content: flex-start;
+    outline: none;
+    padding: 0.85rem 1rem;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+      background-color: color.$primarybg--light;
+      color: color.$primary;
+    }
+
+    &:focus-visible {
+      box-shadow: 0 0 0 2px color.$primary;
+    }
+
+    &-icon {
+      flex-shrink: 0;
+      font-size: 1.8rem;
+      opacity: 0.9;
+    }
+
+    &-label {
+      line-height: 1.3;
+      transition: opacity 0.2s ease;
+
+      &--hidden {
+        height: 0;
+        opacity: 0;
+        overflow: hidden;
+        pointer-events: none;
+        position: absolute;
+        width: 0;
+      }
+    }
+
+    &--active {
+      background-color: color.$primarybg--light;
+      color: color.$primary;
+
+      .sidebar__link-icon {
+        opacity: 1;
+      }
+
+      &:hover {
+        background-color: color.$primarybg--light;
+        color: color.$primary;
+      }
+    }
+  }
+}
+
+@include mixins.respond(tab-port) {
+  .sidebar:not(.sidebar--drawer) {
+    display: none;
+  }
+}

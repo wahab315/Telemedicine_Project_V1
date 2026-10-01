@@ -1,0 +1,29 @@
+@use "./layout" as layout;
+
+@mixin flex-center-column {
+  @include layout.flex-center(column);
+}
+
+@mixin text-align-center {
+  text-align: center;
+}
+
+@mixin text-align-start {
+  text-align: start;
+}
+
+@mixin text-align-end {
+  text-align: end;
+}
+
+@mixin text-uppercase {
+  text-transform: uppercase;
+}
+
+@mixin font-georgia-regular {
+  font-family: GeorgiaCustomRegular, Georgia, serif;
+}
+
+@mixin font-georgia-bold {
+  font-family: GeorgiaCustomBold, Georgia, serif;
+}

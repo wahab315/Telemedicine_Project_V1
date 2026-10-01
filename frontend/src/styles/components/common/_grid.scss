@@ -1,0 +1,68 @@
+@use "../../mixins" as mixins;
+
+@mixin grid-item-sizing($flex, $max-width: null, $padding: null) {
+  flex: $flex;
+
+  @if $max-width {
+    max-width: $max-width;
+  }
+
+  @if $padding {
+    padding: $padding;
+  }
+}
+
+@mixin grid-media-max($width) {
+  @media only screen and (max-width: $width) {
+    @content;
+  }
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+
+  &__version--2 {
+    > * {
+      @include grid-item-sizing(1 1 calc(50% - 2rem));
+    }
+  }
+
+  &__version--3 {
+    > * {
+      @include grid-item-sizing(1 1 calc(33.333% - 2rem), calc(455px - 2rem));
+
+      @include grid-media-max(900px) {
+        @include grid-item-sizing(1 1 calc(50% - 2rem), calc(455px - 2rem));
+      }
+
+      @include mixins.respond(phone) {
+        @include grid-item-sizing(1 1 calc(100% - 2rem), calc(400px - 2rem));
+      }
+    }
+  }
+
+  &__version--4 {
+    > * {
+      @include grid-item-sizing(1 1 calc(25% - 2rem), calc(400px - 2rem));
+
+      @include mixins.respond(tab-port) {
+        @include grid-item-sizing(1 1 calc(33.333% - 2rem), calc(305px - 2rem));
+      }
+
+      @include grid-media-max(800px) {
+        @include grid-item-sizing(1 1 calc(50% - 2rem), calc(305px - 2rem));
+      }
+
+      @include mixins.respond(mobile) {
+        @include grid-item-sizing(
+          1 1 calc(100% - 2rem),
+          calc(380px - 2rem),
+          3.5rem 2rem
+        );
+      }
+    }
+  }
+}

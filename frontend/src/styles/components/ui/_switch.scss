@@ -1,0 +1,53 @@
+@use "../../utils" as color;
+
+.switch {
+  display: inline-block;
+  height: 3.2rem;
+  position: relative;
+  width: 56px;
+
+  input {
+    height: 0;
+    opacity: 0;
+    width: 0;
+  }
+
+  input:checked + .slider {
+    background-color: color.$primary;
+  }
+
+  input:focus + .slider {
+    box-shadow: 0 0 1px color.$primary;
+  }
+
+  input:checked + .slider::before {
+    transform: translateX(26px);
+  }
+
+  .slider {
+    background-color: color.$gray;
+    cursor: pointer;
+    inset: 0;
+    position: absolute;
+    transition: 0.4s;
+
+    &::before {
+      background-color: color.$white;
+      bottom: 5px;
+      content: "";
+      height: 22px;
+      left: 4px;
+      position: absolute;
+      transition: 0.4s;
+      width: 22px;
+    }
+  }
+
+  .slider.round {
+    border-radius: 34px;
+  }
+
+  .slider.round::before {
+    border-radius: 50%;
+  }
+}

@@ -1,0 +1,80 @@
+@use "../../utils/color-variables" as color;
+
+@keyframes offline-icon-arc-fade {
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+
+  50% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes offline-icon-slash-pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes offline-icon-dot-pulse {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(0.9);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+.offline-icon {
+  color: color.$primary;
+  display: inline-block;
+  height: 16rem;
+  width: 16rem;
+
+  &__wifi {
+    transform: translateY(-0.4rem);
+    transform-box: view-box;
+    transform-origin: 50% 50%;
+  }
+
+  &__arc {
+    fill: none;
+
+    &--large {
+      animation: offline-icon-arc-fade 2.4s ease-in-out infinite;
+      animation-delay: 0s;
+    }
+
+    &--medium {
+      animation: offline-icon-arc-fade 2.4s ease-in-out infinite;
+      animation-delay: 0.35s;
+    }
+
+    &--small {
+      animation: offline-icon-arc-fade 2.4s ease-in-out infinite;
+      animation-delay: 0.7s;
+    }
+  }
+
+  &__dot {
+    animation: offline-icon-dot-pulse 2.4s ease-in-out infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+
+  &__slash {
+    animation: offline-icon-slash-pulse 2.2s ease-in-out infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+}

@@ -1,0 +1,91 @@
+@use "../../mixins" as mixins;
+@use "../../utils" as color;
+
+@mixin modal-surface {
+  border-radius: 1.2rem;
+  box-shadow: 0 1.6rem 4.8rem var(--modal-shadow-color, rgb(0 0 0 / 45%));
+}
+
+.modal-overlay {
+  @include mixins.flex-center;
+
+  background-color: rgb(0 0 0 / 44.5%);
+  inset: 0;
+  padding: 2rem;
+  position: fixed;
+  z-index: 400;
+
+  @include mixins.respond(mobile) {
+    padding: 1.2rem;
+  }
+}
+
+.modal {
+  border-radius: 1.6rem;
+  max-width: min(var(--modal-width, 52rem), calc(100vw - 4rem));
+  padding: 1rem;
+  position: relative;
+  width: 100%;
+
+  @include mixins.respond(mobile) {
+    max-width: calc(100vw - 2.4rem);
+  }
+
+  &__primary {
+    box-shadow: 0 0.5rem 3rem color.$primary--light;
+  }
+
+  &__edit {
+    box-shadow: 0 0.5rem 3rem color.$blue-edit;
+  }
+
+  &__danger {
+    box-shadow: 0 0.5rem 3rem color.$red;
+  }
+
+  &__warn {
+    box-shadow: 0 0.5rem 3rem color.$amber;
+  }
+
+  &__accept {
+    box-shadow: 0 0.5rem 3rem color.$green;
+  }
+
+  &__body {
+    max-height: min(90vh, 70rem);
+    overflow: auto;
+    padding: 3rem 1rem;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      display: none;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: color.$primary;
+      border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: color.$primary--light;
+    }
+
+    &--content {
+      padding: 0 2rem;
+    }
+  }
+
+  &__close {
+    background-color: none;
+    color: color.$red;
+    cursor: pointer;
+    font-size: 3.2rem;
+    position: absolute;
+    right: 1rem;
+    top: -3.2rem;
+    z-index: 999999;
+  }
+}

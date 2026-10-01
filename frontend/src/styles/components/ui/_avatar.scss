@@ -1,0 +1,46 @@
+@use "../../mixins" as mixins;
+
+.avatar {
+  &__profile {
+    & > * {
+      border-radius: 50%;
+    }
+
+    & > img {
+      object-fit: cover;
+    }
+
+    & > div {
+      align-items: center;
+      display: flex;
+      height: 2rem;
+      justify-content: center;
+      padding: 2rem;
+      width: 2rem;
+
+      @include mixins.avatar-variant-colors;
+    }
+  }
+
+  &__detail {
+    & > * {
+      border-radius: 50%;
+    }
+
+    & > div {
+      align-items: center;
+      display: flex;
+      height: 10rem;
+      justify-content: center;
+      padding: 2rem;
+      width: 10rem;
+
+      @include mixins.avatar-variant-colors;
+
+      & > p {
+        font-size: 1.8rem;
+        font-weight: 600;
+      }
+    }
+  }
+}

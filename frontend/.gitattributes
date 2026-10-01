@@ -1,0 +1,23 @@
+
+
+* text=auto eol=lf
+
+*.{ts,tsx,js,jsx,mjs,cjs} text eol=lf
+*.{json,jsonc,md,yml,yaml} text eol=lf
+*.{css,scss,html} text eol=lf
+*.{svg} text eol=lf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.otf binary
+*.eot binary
+*.pdf binary
+
+package-lock.json text eol=lf linguist-generated=true

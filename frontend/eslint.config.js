@@ -1,0 +1,22 @@
+import { defineConfig, globalIgnores } from "eslint/config";
+import nextCoreWebVitals from "eslint-config-next/core-web-vitals";
+import prettier from "eslint-config-prettier";
+import simpleImportSort from "eslint-plugin-simple-import-sort";
+import unusedImports from "eslint-plugin-unused-imports";
+
+export default defineConfig([
+  ...nextCoreWebVitals,
+  prettier,
+  {
+    plugins: {
+      "simple-import-sort": simpleImportSort,
+      "unused-imports": unusedImports
+    },
+    rules: {
+      "simple-import-sort/imports": "error",
+      "simple-import-sort/exports": "error",
+      "unused-imports/no-unused-imports": "error"
+    }
+  },
+  globalIgnores([".next/**", "out/**", "build/**", "node_modules/**"])
+]);

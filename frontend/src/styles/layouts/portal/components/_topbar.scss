@@ -1,0 +1,186 @@
+@use "../../../mixins" as mixins;
+@use "../../../utils" as color;
+
+.topbar {
+  @include mixins.flex-center(row);
+
+  border-bottom: 1px solid color.$main--light;
+  flex-shrink: 0;
+  justify-content: space-between;
+  padding: 1.5rem 2.4rem;
+  width: 100%;
+
+  &__main {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    gap: 1.2rem;
+    min-width: 0;
+  }
+
+  &__menu-toggle {
+    @include mixins.flex-center(row);
+
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 0.6rem;
+    color: color.$white;
+    cursor: pointer;
+    display: none;
+    flex-shrink: 0;
+    font: inherit;
+    outline: none;
+    padding: 0.5rem;
+
+    &:hover {
+      background-color: color.$main--light;
+    }
+
+    &:focus-visible {
+      border-color: color.$primary;
+      box-shadow: 0 0 0 1px color.$primary;
+    }
+
+    &-icon {
+      font-size: 2.6rem;
+    }
+
+    @include mixins.respond(tab-port) {
+      display: inline-flex;
+    }
+  }
+
+  &__actions {
+    align-items: center;
+    display: flex;
+    flex-shrink: 0;
+    gap: 1.2rem;
+    justify-content: flex-end;
+    margin-left: 1.6rem;
+  }
+
+  &__user {
+    position: relative;
+
+    &-trigger {
+      @include mixins.flex-center(row, 0.8rem);
+
+      border: 1px solid transparent;
+      border-radius: 0.7rem;
+      color: color.$white;
+      cursor: pointer;
+      font: inherit;
+      justify-content: flex-end;
+      max-width: 28rem;
+      outline: none;
+      padding: 0.4rem 1.6rem;
+
+      &:hover {
+        background-color: color.$main--light;
+      }
+
+      &:focus-visible {
+        border-color: color.$primary;
+        box-shadow: 0 0 0 1px color.$primary;
+      }
+    }
+
+    &-label {
+      font-size: 1.4rem;
+      font-weight: 500;
+      overflow: hidden;
+      text-align: right;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      &--skeleton {
+        background-color: color.$main--light;
+        border-radius: 0.4rem;
+        display: inline-block;
+        height: 1.4rem;
+        margin-top: 0.2rem;
+        min-width: 10rem;
+      }
+    }
+
+    &--skeleton {
+      align-items: center;
+      display: flex;
+      gap: 0.8rem;
+      justify-content: flex-end;
+      min-height: 4.4rem;
+      pointer-events: none;
+    }
+
+    &-dropdown {
+      background-color: color.$main;
+      border: 1px solid color.$main--light;
+      border-radius: 0.6rem;
+      box-shadow: 0 0.8rem 2.4rem rgb(0 0 0 / 35%);
+      display: flex;
+      flex-direction: column;
+      margin-top: 0.4rem;
+      min-width: 18rem;
+      padding: 0.4rem 0;
+      position: absolute;
+      right: 0;
+      top: 100%;
+      z-index: 200;
+    }
+
+    &-menu-item {
+      background: transparent;
+      border: none;
+      border-radius: 0.4rem;
+      color: color.$white;
+      cursor: pointer;
+      display: block;
+      font: inherit;
+      font-size: 1.4rem;
+      margin: 0 0.4rem;
+      outline: none;
+      padding: 0.85rem 1.2rem;
+      text-align: left;
+      text-decoration: none;
+      width: calc(100% - 0.8rem);
+
+      &:hover {
+        background-color: color.$main--light;
+      }
+
+      &:focus-visible {
+        box-shadow: 0 0 0 2px color.$primary;
+      }
+    }
+
+    &-chevron {
+      color: color.$white--light;
+      flex-shrink: 0;
+      font-size: 1.6rem;
+      transition: transform 0.15s ease;
+
+      &--open {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__avatar {
+    @include mixins.flex-center(row);
+
+    background-color: color.$primarybg--light;
+    border-radius: 50%;
+    color: color.$primary;
+    flex-shrink: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    height: 3.6rem;
+    letter-spacing: 0.02em;
+    width: 3.6rem;
+
+    &--skeleton {
+      background-color: color.$main--light;
+      color: transparent;
+    }
+  }
+}

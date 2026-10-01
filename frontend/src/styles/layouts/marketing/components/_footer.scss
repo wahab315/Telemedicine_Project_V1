@@ -1,0 +1,93 @@
+@use "../../../mixins" as mixins;
+
+.footer {
+  padding-block: 6rem 4rem;
+
+  &__top {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+  }
+
+  &__brand {
+    width: 30.5rem;
+
+    @media only screen and (width <= 50em) {
+      text-align: center;
+      width: 100%;
+    }
+
+    &--logo {
+      height: auto;
+      margin-bottom: 3.2rem;
+      width: 100%;
+
+      @media only screen and (width <= 50em) {
+        margin-bottom: 1rem;
+      }
+    }
+
+    &--tagline {
+      line-height: 1.6;
+    }
+  }
+
+  &__columns {
+    display: contents;
+  }
+
+  &__column {
+    @media only screen and (width <= 50em) {
+      text-align: center;
+
+      &:nth-child(1),
+      &:nth-child(2) {
+        width: calc(50% - 2rem);
+      }
+
+      &:nth-child(3) {
+        margin-top: 2rem;
+        width: 100%;
+      }
+    }
+
+    &--heading {
+      margin-bottom: 2rem;
+    }
+
+    &--item {
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+    }
+
+    &--link {
+      display: block;
+
+      @media only screen and (width <= 50em) {
+        display: inline-block;
+        padding: 0 1rem;
+      }
+    }
+  }
+
+  &__rule {
+    background-color: rgb(255 255 255 / 8%);
+    height: 1px;
+    margin-top: 4rem;
+    width: 100%;
+  }
+
+  &__bottom {
+    @include mixins.respond(phone) {
+      padding-top: 4rem;
+    }
+
+    padding-top: 8rem;
+
+    &--copyright {
+      text-align: center;
+    }
+  }
+}

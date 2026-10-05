@@ -129,7 +129,9 @@ export default function TopbarUserMenu() {
         aria-expanded={open}
         aria-haspopup='menu'
         aria-label='Open user menu'
-        className='topbar__user-trigger bg__main--light color__white'
+        className={
+          "topbar__user-trigger bg__main--light" /* color__white */
+        }
         id={triggerId}
         ref={triggerRef}
         type='button'

@@ -40,7 +40,7 @@ const Input = forwardRef(function Input(
           as='p'
           classStyle='tertiary'
           id={`${id}-error`}
-          className='color__red'
+          className={/* "color__red" */ undefined}
           role='alert'
         >
           {error}

@@ -43,7 +43,7 @@ export default function NotFound() {
         <Typography
           as="p"
           classStyle="secondry"
-          className="color__white--light"
+          className={/* "color__white--light" */ undefined}
         >
           The page you are looking for might have been removed, had its name
           changed, or is temporarily unavailable.

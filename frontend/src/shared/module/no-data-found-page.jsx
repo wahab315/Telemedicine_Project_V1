@@ -6,11 +6,21 @@ import Typography from "@/ui/typography";
 export default function NoDataFound() {
   return (
     <Box as='div' className='no-match-found text__align--center'>
-      <BsDatabaseFillX className='no-match-found__icon color__white--light' />
-      <Typography as='h2' classStyle='tertiary' className='color__white--light'>
+      <BsDatabaseFillX
+        className={"no-match-found__icon" /* color__white--light */}
+      />
+      <Typography
+        as='h2'
+        classStyle='tertiary'
+        className={/* "color__white--light" */ undefined}
+      >
         No data found
       </Typography>
-      <Typography as='p' classStyle='tertiary' className='color__white--light'>
+      <Typography
+        as='p'
+        classStyle='tertiary'
+        className={/* "color__white--light" */ undefined}
+      >
         There is no data available for this page.
       </Typography>
     </Box>

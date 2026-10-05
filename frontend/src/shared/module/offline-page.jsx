@@ -33,7 +33,7 @@ export default function OfflineScreen() {
           <Typography
             as='p'
             classStyle='secondary--bold'
-            className='color__white--light'
+            className={/* "color__white--light" */ undefined}
           >
             Check your internet connection. We&apos;ll reconnect automatically
             when you&apos;re back online.

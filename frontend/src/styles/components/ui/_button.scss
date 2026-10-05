@@ -13,8 +13,8 @@ a {
 @mixin btn-primary-base(
   $border-color: color.$primary,
   $text-color: color.$primary,
-  $hover-bg: color.$primary,
-  $hover-color: color.$black
+  $hover-bg: color.$primary
+  // $hover-color: color.$black
 ) {
   @include btn-base(1.6rem, 600);
 
@@ -31,23 +31,23 @@ a {
 
   &:hover:not(:disabled) {
     background-color: $hover-bg;
-    color: $hover-color;
+    // color: $hover-color;
   }
 
   &:disabled {
     border-color: rgb(127 127 127 / 46.67%);
-    color: color.$white--light;
+    // color: color.$white--light;
     cursor: not-allowed;
     opacity: 0.55;
   }
 }
 
-@mixin btn-trigger-base($bg-color, $text-color) {
+@mixin btn-trigger-base($bg-color) {
   align-items: center;
   background-color: $bg-color;
   border: none;
   border-radius: 0.6rem;
-  color: $text-color;
+  // color: $text-color;
   display: flex;
   justify-content: space-between;
   padding: 1.3rem 1.4rem;
@@ -55,19 +55,14 @@ a {
   width: 100%;
 }
 
-@mixin btn-tertiary-base(
-  $bg-color,
-  $border-color,
-  $hover-bg,
-  $text-color: color.$white
-) {
+@mixin btn-tertiary-base($bg-color, $border-color, $hover-bg) {
   @include btn-base(1.3rem, 400);
 
   align-items: center;
   background-color: $bg-color;
   border: 1px solid $border-color;
   border-radius: 0.4rem;
-  color: $text-color;
+  // color: $text-color;
   display: flex;
   gap: 0.2rem;
   justify-content: center;
@@ -117,9 +112,9 @@ a {
 .btn__secondry {
   @include btn-primary-base(
     $border-color: color.$primarybg--light,
-    $text-color: color.$white--light,
-    $hover-bg: color.$primarybg--light,
-    $hover-color: color.$white
+    // $text-color: color.$white--light,
+    $hover-bg: color.$primarybg--light
+    // $hover-color: color.$white
   );
 }
 
@@ -145,7 +140,7 @@ a {
 }
 
 .btn__trigger {
-  @include btn-trigger-base(color.$main--light, color.$white--light);
+  @include btn-trigger-base(color.$main--light); // color.$white--light
 
   &:hover {
     background-color: color.$primarybg--light;
@@ -153,60 +148,60 @@ a {
 }
 
 .btn__trigger--active {
-  @include btn-trigger-base(color.$primary, color.$black);
+  @include btn-trigger-base(color.$primary); // color.$black
 }
 
-.btn__tertiary--danger {
-  @include btn-tertiary-base(color.$red, color.$red, color.$red--light);
-}
+// .btn__tertiary--danger {
+//   @include btn-tertiary-base(color.$red, color.$red, color.$red--light);
+// }
 
-.btn__tertiary--amber {
-  @include btn-tertiary-base(color.$amber, color.$amber, color.$amber--light);
-}
+// .btn__tertiary--amber {
+//   @include btn-tertiary-base(color.$amber, color.$amber, color.$amber--light);
+// }
 
-.btn__tertiary--green {
-  @include btn-tertiary-base(color.$green, color.$green, color.$green--light);
-}
+// .btn__tertiary--green {
+//   @include btn-tertiary-base(color.$green, color.$green, color.$green--light);
+// }
 
-.btn__tertiary--gray {
-  @include btn-tertiary-base(color.$gray, color.$gray, color.$gray-light);
-}
+// .btn__tertiary--gray {
+//   @include btn-tertiary-base(color.$gray, color.$gray, color.$gray-light);
+// }
 
-.btn__tertiary--blue-edit {
-  @include btn-tertiary-base(
-    color.$blue-edit,
-    color.$blue-edit,
-    color.$blue-edit-light
-  );
-}
+// .btn__tertiary--blue-edit {
+//   @include btn-tertiary-base(
+//     color.$blue-edit,
+//     color.$blue-edit,
+//     color.$blue-edit-light
+//   );
+// }
 
-.btn__tertiary--emerald-green {
-  @include btn-tertiary-base(
-    color.$emerald-green,
-    color.$emerald-green,
-    color.$emerald-green-light
-  );
-}
+// .btn__tertiary--emerald-green {
+//   @include btn-tertiary-base(
+//     color.$emerald-green,
+//     color.$emerald-green,
+//     color.$emerald-green-light
+//   );
+// }
 
-.btn__tertiary--danger,
-.btn__tertiary--amber,
-.btn__tertiary--green,
-.btn__tertiary--emerald-green,
-.btn__tertiary--blue-edit {
-  &:disabled {
-    background-color: color.$gray-light;
-    border-color: color.$gray-light;
-    color: color.$white;
-    cursor: not-allowed;
-    opacity: 0.7;
-  }
-}
+// .btn__tertiary--danger,
+// .btn__tertiary--amber,
+// .btn__tertiary--green,
+// .btn__tertiary--emerald-green,
+// .btn__tertiary--blue-edit {
+//   &:disabled {
+//     background-color: color.$gray-light;
+//     border-color: color.$gray-light;
+//     color: color.$white;
+//     cursor: not-allowed;
+//     opacity: 0.7;
+//   }
+// }
 
 %btn__simple {
   @include btn-base(1.6rem, 400);
 
   &:hover {
-    color: color.$white;
+    // color: color.$white;
   }
 }
 
@@ -223,7 +218,7 @@ a {
 }
 
 .btn__navlink--navbar {
-  color: color.$white;
+  // color: color.$white;
 
   @include btn-base(1.6rem, 400);
 }
@@ -234,7 +229,7 @@ a {
   @media only screen and (width <= 58.125em) {
     @include mixins.flex-center;
 
-    color: color.$white;
+    // color: color.$white;
     cursor: pointer;
     display: flex;
     font-size: 4.2rem;
@@ -244,7 +239,7 @@ a {
 .btn__simple--footer-link {
   @extend %btn__simple;
 
-  color: color.$gray;
+  // color: color.$gray;
   display: block;
 
   @media only screen and (width <= 50em) {

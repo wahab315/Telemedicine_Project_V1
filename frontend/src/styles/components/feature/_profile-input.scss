@@ -12,9 +12,9 @@ $dropzone-states: (
     border-color: color.$primary,
     background-color: rgb(255 255 255 / 4%)
   ),
-  error: (
-    border-color: color.$red
-  )
+  // error: (
+  //   border-color: color.$red
+  // )
 );
 
 @mixin square-size($size, $is-circle: false) {
@@ -41,7 +41,7 @@ $dropzone-states: (
       @include mixins.flex-center(column);
       @include square-size(map.get($profile-input-sizes, dropzone), true);
 
-      border: 1px dashed color.$white--light;
+      // border: 1px dashed color.$white--light;
       cursor: pointer;
       padding: 2rem;
       row-gap: 0.8rem;

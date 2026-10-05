@@ -29,7 +29,7 @@
 body {
   background-color: color.$main;
   box-sizing: border-box;
-  color: color.$white;
+  // color: color.$white;
   scroll-behavior: none;
 }
 
@@ -64,7 +64,7 @@ table {
     & > tr {
       & > th {
         border-bottom: 1px solid color.$primarybg--light;
-        color: color.$white--light;
+        // color: color.$white--light;
         font-size: 1.2rem;
         font-weight: 600;
         letter-spacing: 0.06em;
@@ -78,7 +78,7 @@ table {
   & > tbody {
     & > tr {
       & > td {
-        color: color.$white;
+        // color: color.$white;
         font-size: 1.4rem;
         padding: 1.2rem 1.6rem;
         vertical-align: middle;

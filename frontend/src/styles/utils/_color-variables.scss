@@ -3,55 +3,59 @@ $main--light: var(--main-light);
 $primary: var(--primary);
 $primary--light: var(--primary-light);
 $primarybg--light: var(--primarybg-light);
-$yellow: var(--yellow);
-$yellow--light: var(--yellow-light);
 $secondary: var(--secondry);
-$white: var(--white);
-$white--light: var(--white-light);
-$black: var(--black);
-$blue--light: var(--blue-light);
-$bluebg--light: var(--bluebg-light);
-$purple--light: var(--purple-light);
-$purplebg--light: var(--purplebg-light);
-$gray: var(--gray);
-$gray-light: var(--gray-light);
-$red: var(--red);
-$red--light: var(--red-light);
-$green: var(--green);
-$green--light: var(--green-light);
-$amber: var(--amber);
-$amber--light: var(--amber-light);
-$emerald-green: var(--emerald-green);
-$emerald-green-light: var(--emerald-green-light);
-$blue-edit: var(--blue-edit);
-$blue-edit-light: var(--blue-edit-light);
+$secondary--light: var(--secondry-light);
+
+// $yellow: var(--yellow);
+// $yellow--light: var(--yellow-light);
+// $white: var(--white);
+// $white--light: var(--white-light);
+// $black: var(--black);
+// $blue--light: var(--blue-light);
+// $bluebg--light: var(--bluebg-light);
+// $purple--light: var(--purple-light);
+// $purplebg--light: var(--purplebg-light);
+// $gray: var(--gray);
+// $gray-light: var(--gray-light);
+// $red: var(--red);
+// $red--light: var(--red-light);
+// $green: var(--green);
+// $green--light: var(--green-light);
+// $amber: var(--amber);
+// $amber--light: var(--amber-light);
+// $emerald-green: var(--emerald-green);
+// $emerald-green-light: var(--emerald-green-light);
+// $blue-edit: var(--blue-edit);
+// $blue-edit-light: var(--blue-edit-light);
+
 $color-map: (
   "main": $main,
   "main--light": $main--light,
   "primary": $primary,
   "primary--light": $primary--light,
   "primarybg--light": $primarybg--light,
-  "yellow": $yellow,
-  "yellow--light": $yellow--light,
   "secondry": $secondary,
-  "white": $white,
-  "white--light": $white--light,
-  "black": $black,
-  "blue--light": $blue--light,
-  "bluebg--light": $bluebg--light,
-  "purple--light": $purple--light,
-  "purplebg--light": $purplebg--light,
-  "gray": $gray,
-  "gray-light": $gray-light,
-  "red": $red,
-  "red--light": $red--light,
-  "green": $green,
-  "green--light": $green--light,
-  "amber": $amber,
-  "amber--light": $amber--light,
-  "emerald-green": $emerald-green,
-  "emerald-green--light": $emerald-green-light,
-  "emerald-green-light": $emerald-green-light,
-  "blue-edit": $blue-edit,
-  "blue-edit-light": $blue-edit-light
+  "secondry--light": $secondary--light
+  // "yellow": $yellow,
+  // "yellow--light": $yellow--light,
+  // "white": $white,
+  // "white--light": $white--light,
+  // "black": $black,
+  // "blue--light": $blue--light,
+  // "bluebg--light": $bluebg--light,
+  // "purple--light": $purple--light,
+  // "purplebg--light": $purplebg--light,
+  // "gray": $gray,
+  // "gray-light": $gray-light,
+  // "red": $red,
+  // "red--light": $red--light,
+  // "green": $green,
+  // "green--light": $green--light,
+  // "amber": $amber,
+  // "amber--light": $amber--light,
+  // "emerald-green": $emerald-green,
+  // "emerald-green--light": $emerald-green-light,
+  // "emerald-green-light": $emerald-green-light,
+  // "blue-edit": $blue-edit,
+  // "blue-edit-light": $blue-edit-light
 );

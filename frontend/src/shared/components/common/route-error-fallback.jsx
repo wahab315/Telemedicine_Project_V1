@@ -19,7 +19,7 @@ export function RouteErrorFallback({ reset }) {
         <Typography
           as='p'
           classStyle='secondry'
-          className='color__white--light'
+          className={/* "color__white--light" */ undefined}
         >
           An unexpected error occurred. Our team has been notified. Please try
           again.

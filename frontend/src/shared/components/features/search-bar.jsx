@@ -18,20 +18,26 @@ const SearchBar = ({
         <Typography
           as='p'
           classStyle='tertiary--bold'
-          className={`color__white--light ${labelClassName ?? ""}`.trim()}
+          className={
+            /* color__white--light */ `${labelClassName ?? ""}`.trim()
+          }
         >
           {label}
         </Typography>
       ) : null}
       <Box className='search-bar__input bg__main--light'>
-        <Typography as='span' aria-hidden className='color__white--light'>
+        <Typography
+          as='span'
+          aria-hidden
+          className={/* "color__white--light" */ undefined}
+        >
           <HiOutlineMagnifyingGlass />
         </Typography>
         <input
           type='text'
           value={value}
           placeholder={placeholder}
-          className='color__white'
+          className={/* "color__white" */ undefined}
           {...inputProps}
         />
       </Box>

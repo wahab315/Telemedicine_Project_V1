@@ -16,7 +16,7 @@ export default function NoAccess({
     >
       <MdLockOutline
         aria-hidden
-        className='no-access__icon color__white--light'
+        className={"no-access__icon" /* color__white--light */}
       />
       <Typography
         as='h2'
@@ -25,7 +25,11 @@ export default function NoAccess({
       >
         {title}
       </Typography>
-      <Typography as='p' classStyle='tertiary' className='color__white--light'>
+      <Typography
+        as='p'
+        classStyle='tertiary'
+        className={/* "color__white--light" */ undefined}
+      >
         {description}
       </Typography>
     </Box>

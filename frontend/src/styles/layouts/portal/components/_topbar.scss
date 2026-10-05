@@ -24,7 +24,7 @@
     background: transparent;
     border: 1px solid transparent;
     border-radius: 0.6rem;
-    color: color.$white;
+    // color: color.$white;
     cursor: pointer;
     display: none;
     flex-shrink: 0;
@@ -67,7 +67,7 @@
 
       border: 1px solid transparent;
       border-radius: 0.7rem;
-      color: color.$white;
+      // color: color.$white;
       cursor: pointer;
       font: inherit;
       justify-content: flex-end;
@@ -132,7 +132,7 @@
       background: transparent;
       border: none;
       border-radius: 0.4rem;
-      color: color.$white;
+      // color: color.$white;
       cursor: pointer;
       display: block;
       font: inherit;
@@ -154,7 +154,7 @@
     }
 
     &-chevron {
-      color: color.$white--light;
+      // color: color.$white--light;
       flex-shrink: 0;
       font-size: 1.6rem;
       transition: transform 0.15s ease;

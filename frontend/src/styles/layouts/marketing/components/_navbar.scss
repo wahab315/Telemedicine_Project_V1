@@ -61,7 +61,7 @@
       @media only screen and (width <= 58.125em) {
         @include mixins.flex-center;
 
-        color: color.$white;
+        // color: color.$white;
         cursor: pointer;
         display: flex;
         font-size: 4.2rem;
@@ -130,7 +130,7 @@
       transition: transform 0.2s ease;
 
       & > * {
-        color: color.$white;
+        // color: color.$white;
         font-size: 1.6rem;
       }
     }

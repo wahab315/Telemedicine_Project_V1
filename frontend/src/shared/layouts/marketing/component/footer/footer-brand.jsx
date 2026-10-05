@@ -15,7 +15,7 @@ export default function FooterBrand() {
           className='footer__brand--logo'
         />
       </Box>
-      <p className='footer__brand--tagline color__white--light'>
+      <p className={"footer__brand--tagline" /* color__white--light */}>
         <Typography as='span' classStyle='primary'>
           Enterprise GPU infrastructure for organisations that demand dedicated
           capacity, predictable pricing, and reliable support.

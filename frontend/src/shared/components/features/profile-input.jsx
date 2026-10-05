@@ -180,7 +180,7 @@ export default function ProfileInput({
                 <Typography
                   as='p'
                   classStyle='tertiary'
-                  className='text__align--center color__white--light'
+                  className={"text__align--center" /* color__white--light */}
                 >
                   Drag and Drop or <br />
                   <Typography
@@ -195,14 +195,18 @@ export default function ProfileInput({
             )}
           </Box>
           {previewError ? (
-            <Typography as='p' classStyle='tertiary' className='color__red'>
+            <Typography
+              as='p'
+              classStyle='tertiary'
+              className={/* "color__red" */ undefined}
+            >
               {previewError}
             </Typography>
           ) : (
             <Typography
               as='p'
               classStyle='tertiary'
-              className='color__white--light'
+              className={/* "color__white--light" */ undefined}
             >
               PNG, JPG, or JPEG (max. 5MB)
             </Typography>
@@ -224,7 +228,7 @@ export default function ProfileInput({
                 onClick={() => {
                   setIsMenuOpen(prev => !prev);
                 }}
-                className='bg__red'
+                className={/* "bg__red" */ undefined}
               >
                 <MdEdit />
               </Button>
@@ -239,7 +243,7 @@ export default function ProfileInput({
                   <Button
                     classStyle='simple'
                     type='button'
-                    className='color__black bg__amber'
+                    className={/* "color__black bg__amber" */ undefined}
                     onClick={() => {
                       setIsMenuOpen(false);
                       fileInputRef.current?.click();
@@ -249,7 +253,7 @@ export default function ProfileInput({
                   </Button>
                   <Button
                     classStyle='simple'
-                    className='color__white bg__red'
+                    className={/* "color__white bg__red" */ undefined}
                     type='button'
                     onClick={handleDeleteProfile}
                   >
@@ -267,7 +271,7 @@ export default function ProfileInput({
               <Typography
                 as='span'
                 classStyle='tertiary'
-                className='color__white--light'
+                className={/* "color__white--light" */ undefined}
               >
                 {displayedUploadName}
               </Typography>

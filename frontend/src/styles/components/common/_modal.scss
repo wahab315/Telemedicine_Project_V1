@@ -35,21 +35,21 @@
     box-shadow: 0 0.5rem 3rem color.$primary--light;
   }
 
-  &__edit {
-    box-shadow: 0 0.5rem 3rem color.$blue-edit;
-  }
+  // &__edit {
+  //   box-shadow: 0 0.5rem 3rem color.$blue-edit;
+  // }
 
-  &__danger {
-    box-shadow: 0 0.5rem 3rem color.$red;
-  }
+  // &__danger {
+  //   box-shadow: 0 0.5rem 3rem color.$red;
+  // }
 
-  &__warn {
-    box-shadow: 0 0.5rem 3rem color.$amber;
-  }
+  // &__warn {
+  //   box-shadow: 0 0.5rem 3rem color.$amber;
+  // }
 
-  &__accept {
-    box-shadow: 0 0.5rem 3rem color.$green;
-  }
+  // &__accept {
+  //   box-shadow: 0 0.5rem 3rem color.$green;
+  // }
 
   &__body {
     max-height: min(90vh, 70rem);
@@ -80,7 +80,7 @@
 
   &__close {
     background-color: none;
-    color: color.$red;
+    // color: color.$red;
     cursor: pointer;
     font-size: 3.2rem;
     position: absolute;

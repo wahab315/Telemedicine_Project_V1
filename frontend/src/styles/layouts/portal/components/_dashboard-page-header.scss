@@ -21,11 +21,11 @@
           font-size: 1.4rem;
 
           &:last-child {
-            color: color.$white;
+            // color: color.$white;
           }
 
           &:not(:last-child) {
-            color: color.$white--light;
+            // color: color.$white--light;
           }
         }
       }

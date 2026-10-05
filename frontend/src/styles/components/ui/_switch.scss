@@ -25,14 +25,14 @@
   }
 
   .slider {
-    background-color: color.$gray;
+    // background-color: color.$gray;
     cursor: pointer;
     inset: 0;
     position: absolute;
     transition: 0.4s;
 
     &::before {
-      background-color: color.$white;
+      // background-color: color.$white;
       bottom: 5px;
       content: "";
       height: 22px;

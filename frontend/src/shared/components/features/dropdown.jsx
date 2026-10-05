@@ -85,7 +85,7 @@ const Dropdown = ({
           <Typography
             as='label'
             classStyle={labelClassStyle}
-            className={["color__white--light", labelClassName]
+            className={[/* "color__white--light", */ labelClassName]
               .filter(Boolean)
               .join(" ")}
             htmlFor={labelHtmlFor}
@@ -96,7 +96,7 @@ const Dropdown = ({
           <Typography
             as={labelAs}
             classStyle={labelClassStyle}
-            className={["color__white--light", labelClassName]
+            className={[/* "color__white--light", */ labelClassName]
               .filter(Boolean)
               .join(" ")}
           >

@@ -5,7 +5,11 @@ import Typography from "@/ui/typography";
 export default function FooterNavColumn({ section }) {
   return (
     <Box as='nav' aria-label={section.title} className='footer__column'>
-      <p className='footer__column--heading color__white text__case--uppercase'>
+      <p
+        className={
+          "footer__column--heading text__case--uppercase" /* color__white */
+        }
+      >
         <Typography as='span' classStyle='main--bold'>
           {section.title}
         </Typography>

@@ -23,7 +23,9 @@ export default function NavbarDropdown({
       }}
     >
       <Box as="section" className="navbar-dropdown__trigger">
-        <span className="navbar-dropdown__trigger--title color__white">
+        <span
+          className={"navbar-dropdown__trigger--title" /* color__white */}
+        >
           <Typography as="span" classStyle="primary">
             {title}
           </Typography>
@@ -51,20 +53,32 @@ export default function NavbarDropdown({
               }}
             >
               <Box className="navbar-dropdown__panel--content">
-                <h6 className="navbar-dropdown__panel--heading color__white">
+                <h6
+                  className={
+                    "navbar-dropdown__panel--heading" /* color__white */
+                  }
+                >
                   <Typography as="span" classStyle="primary">
                     {item.title}
                   </Typography>
                 </h6>
                 {"gpsValues" in item && item.gpsValues ? (
-                  <p className="navbar-dropdown__panel--meta color__white--light">
+                  <p
+                    className={
+                      "navbar-dropdown__panel--meta" /* color__white--light */
+                    }
+                  >
                     <Typography as="span" classStyle="tertiary">
                       {item.gpsValues}
                     </Typography>
                   </p>
                 ) : null}
                 {"price" in item && item.price ? (
-                  <p className="navbar-dropdown__panel--meta color__white--light">
+                  <p
+                    className={
+                      "navbar-dropdown__panel--meta" /* color__white--light */
+                    }
+                  >
                     <Typography as="span" classStyle="tertiary">
                       {item.price}
                     </Typography>

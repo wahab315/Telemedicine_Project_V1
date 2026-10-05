@@ -108,7 +108,7 @@
     background: transparent;
     border: 1px solid transparent;
     border-radius: 0.6rem;
-    color: color.$white--light;
+    // color: color.$white--light;
     cursor: pointer;
     flex-shrink: 0;
     font: inherit;
@@ -117,7 +117,7 @@
 
     &:hover {
       background-color: color.$main--light;
-      color: color.$white;
+      // color: color.$white;
     }
 
     &:focus-visible {
@@ -141,7 +141,7 @@
     background: transparent;
     border: 1px solid transparent;
     border-radius: 0.6rem;
-    color: color.$white--light;
+    // color: color.$white--light;
     cursor: pointer;
     flex-shrink: 0;
     font: inherit;
@@ -150,7 +150,7 @@
 
     &:hover {
       background-color: color.$main--light;
-      color: color.$white;
+      // color: color.$white;
     }
 
     &:focus-visible {
@@ -196,7 +196,7 @@
   }
 
   &__section-title {
-    color: color.$white--light;
+    // color: color.$white--light;
     font-size: 1.1rem;
     font-weight: 600;
     letter-spacing: 0.06em;
@@ -235,7 +235,7 @@
   &__link {
     align-items: center;
     border-radius: 0.6rem;
-    color: color.$white;
+    // color: color.$white;
     display: flex;
     flex-direction: row;
     font-size: 1.4rem;

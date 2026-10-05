@@ -14,7 +14,7 @@
     background-color: color.$main--light;
     border: 1px solid rgb(127 127 127 / 46.67%);
     border-radius: 0.7rem;
-    color: color.$white;
+    // color: color.$white;
     font-size: 1.4rem;
     padding: 1.6rem 1rem;
     width: 100%;
@@ -25,7 +25,7 @@
     }
 
     &.input__invalid {
-      border: 1px solid color.$red;
+      // border: 1px solid color.$red;
 
       &:focus {
         outline: none;
